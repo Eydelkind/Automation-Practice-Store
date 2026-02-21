@@ -11,17 +11,10 @@ import java.time.Duration;
 public abstract class BaseTest {
 
     protected  WebDriver driver;
-    protected WebDriverWait wait;
 
-    protected BaseTest (WebDriver driver){
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
-
-    public BaseTest() {
+    protected BaseTest() {
 
     }
-
 
 
     @BeforeMethod
@@ -42,7 +35,6 @@ public abstract class BaseTest {
         return driver;
     }
 
-    /* ================= helpers ================= */
 
     private void startDriver() {
         ChromeOptions options = new ChromeOptions();
