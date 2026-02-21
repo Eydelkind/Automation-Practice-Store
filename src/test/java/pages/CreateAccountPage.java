@@ -69,20 +69,10 @@ public class CreateAccountPage extends BasePage {
     private WebElement alert;
 
 
-    String randomEmail = "test" + System.currentTimeMillis() + "@mail.com";
-    String randomLogin = "Musa" + System.currentTimeMillis() / 10101;
-
-
-
     public CreateAccountPage fillRegisterForm(String email, String login){
         type(firstNameField, "Musa");
         type(lastNameField, "Greycat");
-        if (email == null){
-            type(emailField, randomEmail);
-        }
-        else {
-            type(emailField, email);
-        }
+        type(emailField, email);
         type(telephoneField, "0057");
         type(faxField, "0057");
         type(companyField, "Grey Cat");
@@ -95,12 +85,7 @@ public class CreateAccountPage extends BasePage {
         Select region = new Select(regionField);
         region.selectByVisibleText("Haifa");
         type(postcodeField, "324119");
-        if (login == null){
-            type(loginNameField, randomLogin);
-        }
-        else {
-            type(loginNameField, login);
-        }
+        type(loginNameField, login);
         type(passwordField, "miaou");
         type(passwordConfirmField, "miaou");
 

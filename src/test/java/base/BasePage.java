@@ -83,7 +83,6 @@ public abstract class BasePage {
         return new CartPage(driver);
     }
 
-
     public LogOutPage logout(){
 
         Actions actions = new Actions(driver);

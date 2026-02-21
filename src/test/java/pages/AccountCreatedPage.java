@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AccountCreatedPage extends BasePage {
-    protected AccountCreatedPage(WebDriver driver) {
+    public AccountCreatedPage(WebDriver driver) {
         super(driver);
     }
 

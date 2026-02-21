@@ -10,6 +10,9 @@ public class LoginTests extends BaseTest {
     private final String login = "LevEydelkind";
     private final String password = "29061983";
     private final String wrongPassword = "wrong";
+    private final String email = "murmur@miaou.com";
+    String randomEmail = "test" + System.currentTimeMillis() + "@mail.com";
+    String randomLogin = "Musa" + System.currentTimeMillis() / 10101;
 
 
     @Test
@@ -17,7 +20,7 @@ public class LoginTests extends BaseTest {
         String message = new HomePage(driver)
                 .clickLoginOrRegister()
                 .clickContinueToFillRegisterForm()
-                .fillRegisterForm(null, null)
+                .fillRegisterForm(randomEmail, randomLogin)
                 .clickContinuetoRegister()
                 .getMessageText();
 
@@ -29,7 +32,7 @@ public class LoginTests extends BaseTest {
         String messsage = new HomePage(driver)
                 .clickLoginOrRegister()
                 .clickContinueToFillRegisterForm()
-                .fillRegisterForm("murmur@miaou.com", null)
+                .fillRegisterForm(email, randomLogin)
                 .clickContinue()
                 .getAlertText();
 
@@ -41,7 +44,7 @@ public class LoginTests extends BaseTest {
         String messsage = new HomePage(driver)
                 .clickLoginOrRegister()
                 .clickContinueToFillRegisterForm()
-                .fillRegisterForm(null, "LevEydelkind")
+                .fillRegisterForm(randomEmail, login)
                 .clickContinue()
                 .getAlertText();
 
